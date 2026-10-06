@@ -100,7 +100,7 @@ void CPPCodeGenerator::writeBinaryExpression(const BinaryExpression& b,
                 op = ">=";
                 break;
             default:
-                SkASSERT(false);
+                SK_ABORT("unsupported operator on a nullable fragment processor");
         }
         fFormatArgs.push_back("_outer." + String(var->fName) + "_index " + op + " 0 ? \"true\" "
                               ": \"false\"");
